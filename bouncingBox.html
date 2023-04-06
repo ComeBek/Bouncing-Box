@@ -1,0 +1,32 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >ComeBek</div>
+  <script type="text/javascript">
+
+    const box = document.getElementById("my_bouncing_box");
+    const fps = 60;
+    let xPos = 3;  let xV = 1;
+    let yPos = 3;  let yV = 1;
+
+        function boxMove(){
+
+            box.style.left = xPos + 'px';
+            box.style.top = yPos + 'px';
+
+        }
+            setInterval(() => {
+
+                if (xPos + box.clientWidth >= window.innerWidth || xPos <= 0){
+                    xV = -xV;
+                }
+                if (yPos + box.clientHeight >= window.innerHeight || yPos <= 0){
+                    yV = -yV;
+                }
+                    xPos += xV;
+                    yPos += yV;
+
+            boxMove();    
+            },999 / fps);
+
+
+  </script>
+</html>
